@@ -70,7 +70,7 @@ printf("******************************** \n");
   printf("Average High Temperature is %f C\n",AvgH);
   printf("Average Low  Temperature is %f C\n",AvgL);
    
-   int swaph,swapl;
+   int swaph,swapl,toH;
    //////////////High
 for(i=0; i<7; i++){
 		for(j=i+1; j<6; j++){
@@ -81,9 +81,13 @@ for(i=0; i<7; i++){
 			
 		}
 	}
+  printf("Median High Temperature is %d\n",midH[3]);
    for (i=0; i<7; i++){
     printf("midh%d [%d]\n",midH[i],i);
   }
+
+  for(i=0; i<7; i++){
+		toH = toH + midH[i];}
   //////////////low
   for(i=0;i<7;i++){
    for(j=i+1;j<7;j++){
@@ -94,6 +98,7 @@ for(i=0; i<7; i++){
        }
       }
     }
+    printf("Median Low  Temperature is %d C\n",midL[3]);
   for (i=0; i<7; i++){
     printf("midl%d [%d]\n",midL[i],i);
   }

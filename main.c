@@ -2,75 +2,60 @@
 int main(void) 
 {
  int i, j;
- //int temp[7][2];
- int temp[7][2]={40,30,39,28,38,27,37,26,36,25,35,24,42,23};
+ int temp[7][2];
+ int swaph,swapl;
+ //int temp[7][2]={40,30,39,28,38,27,37,26,36,25,35,24,42,23};
  int Max, Min;
  int midH[7], midL[7];
  float SumH, SumL;
  float AvgH, AvgL;
  char name[100];
    
- 
  printf("Enter your name : ");
  scanf(" %s",name);
  printf("Hello %s\n",name);
  char day[7][20] =
         {
-           "Monday    :",
-           "Tuesday   :",
-           "Wednesday :",
-           "Thursday  :",
-           "Friday    :",
-           "Saturday  :",
-           "Sunday    :"
+           "Monday    : ",
+           "Tuesday   : ",
+           "Wednesday : ",
+           "Thursday  : ",
+           "Friday    : ",
+           "Saturday  : ",
+           "Sunday    : "
         };
- 
-   
+
 printf("******************************** \n");
   for(i=0; i<7; i++){
       for(j=0;j<2;j++){
         if(j==0){
-         printf("High Temp %s%d%d ",day[i],i,j);
+         printf("High Temp %s",day[i]);
          scanf("%d", &temp[i][j]);
          midH[i]= temp[i][j];
          SumH += temp[i][j];
+         Max = temp[i][j];
           }
          else{
-         printf("Low  Temp %s%d%d ",day[i],i,j);
+         printf("Low  Temp %s",day[i]);
          scanf("%d", &temp[i][j]);
          midL[i] = temp[i][j];
          SumL += temp[i][j];
+         Min = temp[i][j];
          }
       }
     }
-  
 printf("******************************** \n");
- 
-  for (i=0; i<7; i++)
+   for (i=0; i<7; i++)
     for (j=0; j<2; j++){
         if(temp[i][j]> Max)
-         Max=temp[i][j];
-         if(temp[i][j]< Min)
-         Min=temp[i][j]; 
+         Max= temp[i][j];
+         if(temp[i][j]<Min)
+         Min= temp[i][j]; 
           }
-
-  for (i=0; i<7; i++){
-    printf("midh%d [%d]\n",midH[i],i);
-  }
-
-
   //SumH=temp[0][0]+temp[1][0]+temp[2][0]+temp[3][0]+temp[4][0]+temp[5][0]+temp[6][0];
   //SumL=(temp[0][1]+temp[1][1]+temp[2][1]+temp[3][1]+temp[4][1]+temp[5][1]+temp[6][1]);
   AvgH=SumH/7;
   AvgL=SumL/7;
-  
-  printf("Average High Temperature is %d C\n",Max);
-  printf("Average Low  Temperature is %d C\n",Min);
-
-  printf("Average High Temperature is %f C\n",AvgH);
-  printf("Average Low  Temperature is %f C\n",AvgL);
-   
-   int swaph,swapl,toH;
    //////////////High
 for(i=0; i<7; i++){
 		for(j=i+1; j<6; j++){
@@ -78,16 +63,8 @@ for(i=0; i<7; i++){
 				swaph=midH[i];
 				midH[i]=midH[j];
 				midH[j]=swaph;
-			
 		}
 	}
-  printf("Median High Temperature is %d\n",midH[3]);
-   for (i=0; i<7; i++){
-    printf("midh%d [%d]\n",midH[i],i);
-  }
-
-  for(i=0; i<7; i++){
-		toH = toH + midH[i];}
   //////////////low
   for(i=0;i<7;i++){
    for(j=i+1;j<7;j++){
@@ -98,16 +75,13 @@ for(i=0; i<7; i++){
        }
       }
     }
+    printf("Max Temperature is %d C\n",Max);
+    printf("Min Temperature is %d C\n",Min);
+    printf("Average High Temperature is %.2f C\n",AvgH);
+    printf("Average Low  Temperature is %.2f C\n",AvgL);
+    printf("Median High Temperature is %d C\n",midH[3]);
     printf("Median Low  Temperature is %d C\n",midL[3]);
-  for (i=0; i<7; i++){
-    printf("midl%d [%d]\n",midL[i],i);
-  }
-
-
-  
   //High temp[0][0] temp[1][0] temp[2][0] temp[3][0] temp[4][0] temp[5][0] temp[6][0] 
   //low  temp[0][1] temp[1][1] temp[2][1] temp[3][1] temp[4][1] temp[5][1] temp[6][1]
-
- 
   return 0;
 }

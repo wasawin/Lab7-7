@@ -8,7 +8,6 @@ int main(void)
  int Max, Min;
  int midH[7], midL[7];
  float SumH, SumL;
- float AvgH, AvgL;
  char name[100];
    
  printf("Enter your name : ");
@@ -54,8 +53,7 @@ printf("******************************** \n");
           }
   //SumH=temp[0][0]+temp[1][0]+temp[2][0]+temp[3][0]+temp[4][0]+temp[5][0]+temp[6][0];
   //SumL=(temp[0][1]+temp[1][1]+temp[2][1]+temp[3][1]+temp[4][1]+temp[5][1]+temp[6][1]);
-  AvgH=SumH/7;
-  AvgL=SumL/7;
+  
    //////////////High
 for(i=0; i<7; i++){
 		for(j=i+1; j<6; j++){
@@ -77,8 +75,8 @@ for(i=0; i<7; i++){
     }
     printf("Max Temperature is %d C\n",Max);
     printf("Min Temperature is %d C\n",Min);
-    printf("Average High Temperature is %.2f C\n",AvgH);
-    printf("Average Low  Temperature is %.2f C\n",AvgL);
+    printf("Average High Temperature is %.2f C\n",SumH/7);
+    printf("Average Low  Temperature is %.2f C\n",SumL/7);
     printf("Median High Temperature is %d C\n",midH[3]);
     printf("Median Low  Temperature is %d C\n",midL[3]);
   //High temp[0][0] temp[1][0] temp[2][0] temp[3][0] temp[4][0] temp[5][0] temp[6][0] 
